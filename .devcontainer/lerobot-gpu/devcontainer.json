@@ -1,0 +1,32 @@
+{
+    "name": "LeRobot GPU Dev Container",
+    "build": {
+        "dockerfile": "../../docker/lerobot-gpu/Dockerfile",
+        "context": "../../"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.pythonPath": "/opt/venv/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-azuretools.vscode-docker",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "forwardPorts": [
+        8000,
+        8080,
+        8888
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    ],
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "pip install -e ."
+}
