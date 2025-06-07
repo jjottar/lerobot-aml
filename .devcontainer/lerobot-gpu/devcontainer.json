@@ -25,7 +25,8 @@
         8888
     ],
     "mounts": [
-        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+        "source=${localWorkspaceFolder},target=/workspace,type=bind",
+        "source=/mnt/blobfuse/,target=/mnt/data,type=bind"
     ],
     "workspaceFolder": "/workspace",
     "postCreateCommand": "pip install -e . && pip install ipykernel && pip install ipywidgets"
